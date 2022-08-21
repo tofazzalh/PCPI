@@ -1,6 +1,3 @@
-<!-- badges: start -->
-  [![R-CMD-check](https://github.com/tofazzalh/circRNAFull/workflows/R-CMD-check/badge.svg)](https://github.com/tofazzalh/circRNAFull/actions)
-<!-- badges: end -->
 
 # PCPI: an R package for predicting circRNA and protein interaction
 
