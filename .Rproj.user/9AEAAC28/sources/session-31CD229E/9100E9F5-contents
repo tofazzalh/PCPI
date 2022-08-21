@@ -1,0 +1,15 @@
+library(PCPI)
+
+circRNA_seq<-"F:/Third_project/Third_project/Example_data/circRNA_seq_neg.fasta"
+circ_fastaFile <- readDNAStringSet(circRNA_seq)
+circ_seq_name = names(circ_fastaFile)
+circ_sequence = paste(circ_fastaFile)
+circ_seq_df<-data.frame(circ_seq_name, circ_sequence)
+
+protein_seq<-"F:/Third_project/Third_project/Example_data/protein_seq_neg.fasta"
+header_only <- read.fasta(protein_seq, seqtype="AA", as.string = TRUE, whole.header=T)
+seq_only <- read.fasta(protein_seq, seqtype="AA", as.string = TRUE, seqonly=T)
+df_protein<-data.frame(sub('\\ .*', '', attr(header_only, "name")),t(data.frame(seq_only)))
+
+output_folder<-"F:/Third_project/Third_project/Example_data/test_PCPI"
+circ_protein_interaction(circ_seq_df,df_protein, output_folder)

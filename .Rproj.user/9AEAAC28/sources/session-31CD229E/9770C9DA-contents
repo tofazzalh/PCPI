@@ -1,0 +1,19 @@
+library("Biostrings")
+library(stringi)
+library("seqinr")
+library("e1071")
+
+#Loading an example data for circRNA names and sequences.
+a<-data("circRNA_seq_df")
+circ_df<-circRNA_seq_df
+
+
+#Loading an example data for protein names and sequences.
+b<-data("protein_seq_df")
+protein_df<-protein_seq_df
+
+#predicting circRNA and protein interaction. Here, the output will be
+#written in file interaction-data.txt in out_dir directory
+out_dir<-tempdir()
+circRNA_protein_interaction(circ_df, protein_df, out_dir)
+

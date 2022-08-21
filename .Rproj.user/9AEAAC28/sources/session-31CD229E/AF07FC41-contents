@@ -1,0 +1,26 @@
+library("Biostrings")
+library(stringi)
+library("seqinr")
+
+
+circRNA_seq<-"F:/Third_project/Third_project/Example_data/circRNA_seq_neg.fasta"
+protein_seq<-"F:/Third_project/Third_project/Example_data/protein_seq_neg.fasta"
+
+circ_fastaFile <- readDNAStringSet(circRNA_seq)
+circ_seq_name = names(circ_fastaFile)
+circ_sequence = paste(circ_fastaFile)
+df<-data.frame(circ_seq_name, circ_sequence)
+circRNA_seq_df<-df
+usethis::use_data(circRNA_seq_df)
+head(circRNA_seq_df)
+dim(circRNA_seq_df)
+
+header_only <- read.fasta(protein_seq, seqtype="AA", as.string = TRUE, whole.header=T)
+seq_only <- read.fasta(protein_seq, seqtype="AA", as.string = TRUE, seqonly=T)
+df_protein<-data.frame(sub('\\ .*', '', attr(header_only, "name")),t(data.frame(seq_only)))
+row.names(df_protein)<-1:dim(df_protein)[1]
+colnames(df_protein)<-c("protein_name", "protein_seq")
+head(df_protein)
+dim(df_protein)
+protein_seq_df<-df_protein
+use_data(protein_seq_df)
