@@ -1,3 +1,4 @@
+[![R-CMD-check](https://github.com/tofazzalh/PCPI/actions/workflows/R-CMD-check.yml/badge.svg)](https://github.com/tofazzalh/PCPI/actions/workflows/R-CMD-check.yml)
 
 # PCPI: an R package for predicting circRNA and protein interaction
 
