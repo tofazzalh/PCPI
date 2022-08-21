@@ -20,7 +20,7 @@ The package "PCPI" depends on one bioconductor packages "Biostrings" which canno
         install.packages("BiocManager")
     BiocManager::install("Biostrings")
 
-Finally, install “circRNAFull” by the following command:
+Finally, install “PCPI” by the following command:
 
     devtools::install_github("tofazzalh/PCPI", dep = T)
 
