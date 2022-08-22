@@ -3,7 +3,7 @@
 # PCPI: an R package for predicting circRNA and protein interaction
 
 ## Requirements
-* R (>= 4.2.0)
+* R (>= 2.10)
 * Biostrings
 * seqinr
 * e1071
